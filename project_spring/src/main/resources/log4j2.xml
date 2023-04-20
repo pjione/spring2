@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<!-- Appenders -->
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%-5p: %c - %m%n" />
+		</Console>
+	</Appenders>
+
+	<!-- Application Loggers -->
+	<Loggers>
+		<Logger name="com.spring.controller" level="info" />
+		<Logger name="org.springframework.core" level="info" />
+		<Logger name="org.springframework.beans" level="info" />
+		<Logger name="org.springframework.context" level="info" />
+		<Logger name="org.springframework.web" level="info" />
+		<!--log4jdbc loggers -->
+		<Logger name="jdbc.sqlonly" level="info" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.sqltiming" level="debug" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.audit" level="off" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.resultset" level="off" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.resultsettable" level="debug" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.connection" level="warn" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<!-- Root Logger -->
+		<Root level="info">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
+</Configuration>
